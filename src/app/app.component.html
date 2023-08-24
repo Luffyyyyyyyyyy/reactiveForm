@@ -1,5 +1,12 @@
 <div>
   <h4>
-    This user connot be use this form
+    fill the form
   </h4>
+<form>
+  <input type="text" placeholder="name" formControlName="name"><br><br>
+        <input type="text" placeholder="email" formControlName="email" maxlength="4"><br><br>
+        <input type="text" placeholder="password" formControlName="password">
+
+        <button type="submit" (click)="submit()" [disabled]="loginForm.invalid">Submit</button>
+</form>
 </div>
