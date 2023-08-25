@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import{FormGroup,FormControl,FormArray}from '@angular/forms'
+import{FormGroup,FormControl,FormArray, FormBuilder}from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,6 @@ import{FormGroup,FormControl,FormArray}from '@angular/forms'
 })
 export class AppComponent {
   title = 'reactiveform1';
+loginForm!: FormGroup;
+constructor( private _fb: FormBuilder){}
 }
