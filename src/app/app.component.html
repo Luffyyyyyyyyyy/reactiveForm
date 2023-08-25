@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
   <form action="" [formGroup]="loginForm">
 
       <input type="text" placeholder="name" formControlName="name"><br><br>
@@ -6,11 +7,24 @@
       <input type="text" placeholder="password" formControlName="password">
 
       <button type="submit" (click)="submit()" [disabled]="loginForm.invalid">Submit</button>
+=======
+  <form [formGroup]="loginForm">
+    <input type="text" placeholder=" firstName "><br><br>
+    <input type="text" placeholder="lastName "><br><br>
+    <input type="text" placeholder="full address "><br><br>
+    <input type="text" placeholder="email full address"><br><br>
+    <input type="text" placeholder="password"><br><br>
+    <input type="text" placeholder="phone Number"><br><br>
+    <input type="text" placeholder="mobile Number"><br><br>
+    <input type="text" placeholder="pin number"><br><br>
+    <button>login</button>
+>>>>>>> 11f8d2e4cce720fa1d1ee1ad8cf1b71d331cca91
   </form>
 </div>
 
 <div>
   <table>
+<<<<<<< HEAD
       <thead>
           <tr>
               <th>ID :</th>
@@ -28,5 +42,20 @@
               <td>{{data.password}}</td>
           </tr>
       </tbody>
+=======
+    <thead>
+      <tr>
+        <th># :</th>
+        <th>Name :</th>
+        <th>father name </th>
+        <th>mother name </th>
+        <th>age</th>
+        <th>education</th>
+        <th>country</th>
+        <th>Contact number</th>
+        <th>Parents number</th>
+      </tr>
+    </thead>
+>>>>>>> 11f8d2e4cce720fa1d1ee1ad8cf1b71d331cca91
   </table>
 </div>
