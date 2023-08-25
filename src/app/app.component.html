@@ -1,26 +1,32 @@
 <div>
-  <form [formGroup]="loginForm">
-    <input type="text" placeholder=" first name "><br><br>
-    <input type="text" placeholder="last name "><br><br>
-    <input type="text" placeholder="full address "><br><br>
-    <input type="text" placeholder="email full address"><br><br>
-    <input type="text" placeholder="password"><br><br>
-    <input type="text" placeholder="phone Number"><br><br>
-    <button>login</button>
+  <form action="" [formGroup]="loginForm">
+
+      <input type="text" placeholder="name" formControlName="name"><br><br>
+      <input type="text" placeholder="email" formControlName="email" maxlength="4"><br><br>
+      <input type="text" placeholder="password" formControlName="password">
+
+      <button type="submit" (click)="submit()" [disabled]="loginForm.invalid">Submit</button>
   </form>
 </div>
+
 <div>
   <table>
-    <thead>
-      <tr>
-        <th># :</th>
-        <th>Name :</th>
-        <th>father name </th>
-        <th>mother name </th>
-        <th>age</th>
-        <th>education</th>
-        <th>country</th>
-      </tr>
-    </thead>
+      <thead>
+          <tr>
+              <th>ID :</th>
+              <th>Name :</th>
+              <th>Email :</th>
+              <th>Password :</th>
+          </tr>
+      </thead>
+      <tbody *ngFor="let data of loginData">
+          <tr> 
+          <!-- *ngIf="data.value">   -->
+              <td>{{data.id}}</td>
+              <td>{{data.name}}</td>
+              <td>{{data.email}}</td>
+              <td>{{data.password}}</td>
+          </tr>
+      </tbody>
   </table>
 </div>

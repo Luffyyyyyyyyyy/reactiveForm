@@ -11,25 +11,48 @@ export class AppComponent {
   title = 'reactiveform1';
 
   loginForm!: FormGroup;
+  loginData : any = []
   constructor(private _fb: FormBuilder, private _service: ReactiveFormService) { }
-  ngOnInit() {
+  ngOnInit(): void {
     this.initilizeloginForm();
-
+    this.getapiData()
   }
+
   initilizeloginForm() {
+
     this.loginForm = this._fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      name : ['',[Validators.required]],
+      email : ['',[Validators.required,]],
+      password : ['',[Validators.required]]
     })
   }
-  public get name(): any {
-    return this.loginForm.get('name')
+
+  submit(){
+    // this.loginData.push(this.loginForm.value)
+    // console.log(this.loginData)
+
+    this._service.login(this.loginForm.value)
+    .subscribe((res) =>{
+      console.log(res)
+    })
+    this.loginForm.reset();
   }
-  public get email(): any {
-    return this.loginForm.get('email')
+
+
+  getapiData() {
+    this._service.getData()
+    .subscribe((res) =>{
+      console.log(res)
+      this.loginData = res
+      console.log(this.loginData)
+    })
   }
-  public get password(): any {
-    return this.loginForm.get('password')
-  }
+
+
+
+
+
+
 }
+
+
