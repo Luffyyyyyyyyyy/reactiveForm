@@ -8,4 +8,5 @@ import{FormGroup,FormControl,FormArray}from '@angular/forms'
 })
 export class AppComponent {
   title = 'reactiveform1';
+  loginform!:FormGroup;
 }
