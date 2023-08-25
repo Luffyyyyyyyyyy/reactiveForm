@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import{FormGroup,FormControl,FormArray, FormBuilder}from '@angular/forms'
+import { Component, OnInit} from '@angular/core';
+import{FormGroup,FormControl,FormArray, FormBuilder, Validators}from '@angular/forms'
+import { ReactiveFormService } from './reactive-form.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,18 @@ import{FormGroup,FormControl,FormArray, FormBuilder}from '@angular/forms'
 })
 export class AppComponent {
   title = 'reactiveform1';
-<<<<<<< HEAD
+
 loginForm!: FormGroup;
-constructor( private _fb: FormBuilder){}
-=======
-  loginform!:FormGroup;
->>>>>>> a9948b6e7641ed9523be3a5dc56c532706e07326
+constructor( private _fb: FormBuilder, private _service : ReactiveFormService){}
+ngOnInit(){
+  this.initilizeloginForm();
+
+}
+initilizeloginForm(){
+  this.loginForm=this._fb.group({
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  })
+}
 }
