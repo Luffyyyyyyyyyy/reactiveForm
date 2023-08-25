@@ -23,6 +23,8 @@ export class AppComponent {
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
+      moblieNumber: ['', [Validators.required]],
     })
   }
   public get name(): any {
