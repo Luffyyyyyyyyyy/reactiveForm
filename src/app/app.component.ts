@@ -18,7 +18,8 @@ export class AppComponent {
   }
   initilizeloginForm() {
     this.loginForm = this._fb.group({
-      name: ['', [Validators.required]],
+
+      firstName: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
     })
