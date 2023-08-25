@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import{FormGroup,FormControl,FormArray, FormBuilder, Validators}from '@angular/forms'
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@angular/forms'
 import { ReactiveFormService } from './reactive-form.service';
 
 @Component({
@@ -10,17 +10,49 @@ import { ReactiveFormService } from './reactive-form.service';
 export class AppComponent {
   title = 'reactiveform1';
 
-loginForm!: FormGroup;
-constructor( private _fb: FormBuilder, private _service : ReactiveFormService){}
-ngOnInit(){
-  this.initilizeloginForm();
+  loginForm!: FormGroup;
+  loginData : any = []
+  constructor(private _fb: FormBuilder, private _service: ReactiveFormService) { }
+  ngOnInit(): void {
+    this.initilizeloginForm();
+    this.getapiData()
+  }
+
+  initilizeloginForm() {
+
+    this.loginForm = this._fb.group({
+      name : ['',[Validators.required]],
+      email : ['',[Validators.required,]],
+      password : ['',[Validators.required]]
+    })
+  }
+
+  submit(){
+    // this.loginData.push(this.loginForm.value)
+    // console.log(this.loginData)
+
+    this._service.login(this.loginForm.value)
+    .subscribe((res) =>{
+      console.log(res)
+    })
+    this.loginForm.reset();
+  }
+
+
+  getapiData() {
+    this._service.getData()
+    .subscribe((res) =>{
+      console.log(res)
+      this.loginData = res
+      console.log(this.loginData)
+    })
+  }
+
+
+
+
+
 
 }
-initilizeloginForm(){
-  this.loginForm=this._fb.group({
-    name: ['', [Validators.required]],
-    email: ['', [Validators.required]],
-    password: ['', [Validators.required]],
-  })
-}
-}
+
+
