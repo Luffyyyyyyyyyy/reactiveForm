@@ -25,6 +25,7 @@ export class AppComponent {
       password: ['', [Validators.required]],
       phoneNumber: ['', [Validators.required]],
       moblieNumber: ['', [Validators.required]],
+      pinCode: ['', [Validators.required]],
     })
   }
   public get name(): any {
