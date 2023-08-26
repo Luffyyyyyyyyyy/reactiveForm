@@ -13,12 +13,7 @@
       <input type="text" placeholder="full address "><br><br>
       <input type="text" placeholder="email full address"><br><br>
       <input type="text" placeholder="password"><br><br>
-<<<<<<< HEAD
-      <input type="text" placeholder="phone Number"><br><br>
-      <input type="text" placeholder="mobile Number"><br><br>
-=======
 
->>>>>>> c9c6d020bbb1c508d5b09b98257b5cb269c2f7cb
       <button>login</button>
 
     </form>
@@ -29,40 +24,6 @@
   <h3>My name gulab bhati</h3>
   <table>
 
-    <thead>
-      <tr>
-        <th>ID :</th>
-        <th>Name :</th>
-        <th>Email :</th>
-        <th>Password :</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let data of loginData">
-      <tr>
-        <!-- *ngIf="data.value">   -->
-        <td>{{data.id}}</td>
-        <td>{{data.name}}</td>
-        <td>{{data.email}}</td>
-        <td>{{data.password}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>my name gulab singh</h3>
-  <button>new</button>
-</div>
-=======
-<<<<<<< HEAD
-<div>
-<form [formGroup]="loginForm">
-  <input type="text" placeholder="enter name"><br><br>
-  <input type="text" placeholder="email"><br><br>
-  <input type="text" placeholder="enter password"><br><br>
-<button>login</button>
-</form>
-</div>
-<div>
-  <p>helllo</p>
-  <table>
     <thead>
         <tr>
             <th># :</th>
@@ -76,20 +37,18 @@
 
         </tr>
     </thead>
+    <tbody *ngFor="let data of loginData">
+      <tr>
+        <!-- *ngIf="data.value">   -->
+        <td>{{data.id}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.password}}</td>
+      </tr>
+    </tbody>
   </table>
-  <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-<div class="input-group">
-  <span class="input-group-text">First and last name</span>
-  <input type="text" aria-label="First name" class="form-control">
-  <input type="text" aria-label="Last name" class="form-control">
-</div>
-  <button>submit</button>
+  <button>new</button>
+  <button class="btn btn-danger">Close</button>
 </div>
 =======
 >>>>>>> 150642e28f2be74612fe6330e58920edeba82d34
->>>>>>> f9065e9547c3ac21cb5b84b5b516d35699a7617c
