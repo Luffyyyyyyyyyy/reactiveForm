@@ -31,13 +31,22 @@ export class AppComponent {
   submit(){
     console.log(this.loginForm.value)
   }
-  public get name(): any {
-    return this.loginForm.get('name')
+  public get firstName(): any {
+    return this.loginForm.get('firstName')
+  }
+  public get lastName(): any {
+    return this.loginForm.get('lastName')
   }
   public get email(): any {
     return this.loginForm.get('email')
   }
   public get password(): any {
     return this.loginForm.get('password')
+  }
+  public get mobile(): any {
+    return this.loginForm.get('mobileNumber')
+  }
+  public get pinCode(): any {
+    return this.loginForm.get('pinCode')
   }
 }
