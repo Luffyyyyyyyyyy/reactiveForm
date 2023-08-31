@@ -23,13 +23,13 @@ export class AppComponent {
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
-      moblieNumber: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      mobileNumber: ['', [Validators.required]],
       pinCode: ['', [Validators.required]],
     })
   }
   submit(){
-    
+    console.log(this.loginForm.value)
   }
   public get name(): any {
     return this.loginForm.get('name')

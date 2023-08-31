@@ -2,15 +2,15 @@
   <form action="" [formGroup]="loginForm">
     <div class="pt-2">
       <label for="firstName">First Name</label>
-      <input type="text" placeholder="Enter your First Name">
+      <input type="text" placeholder="Enter your First Name" formControlName="firstName">
     </div>
     <div class="pt-2">
       <label for="lastName">Last Name</label>
-      <input type="text" placeholder="Enter your Last Name">
+      <input type="text" placeholder="Enter your Last Name" formControlName="lastName">
     </div>
     <div class="pt-2">
       <label for="address">Address</label>
-      <input type="text" placeholder="Enter your Permanent Address">
+      <input type="text" placeholder="Enter your Permanent Address" formControlName="address">
     </div>
     <div class="pt-2">
       <label for="email">Email ID</label>
@@ -19,6 +19,14 @@
     <div class="pt-2">
       <label for="password">Password</label>
       <input type="password" placeholder="Password" formControlName="password">
+    </div>
+    <div class="pt-2">
+      <label for="conatact">Contact No</label>
+      <input type="password" formControlName="mobileNumber">
+    </div>
+    <div class="pt-2">
+      <label for="pincode">Pin Code</label>
+      <input type="password" formControlName="pinCode">
     </div>
 
     <button type="submit" (click)="submit()" [disabled]="loginForm.invalid">Submit</button>
