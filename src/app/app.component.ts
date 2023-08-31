@@ -9,7 +9,7 @@ import { ReactiveFormService } from './reactive-form.service';
 })
 export class AppComponent {
   title = 'reactiveform1';
-
+  loginData: any[] = []
   loginForm!: FormGroup;
   constructor(private _fb: FormBuilder, private _service: ReactiveFormService) { }
   ngOnInit() {
@@ -27,6 +27,9 @@ export class AppComponent {
       moblieNumber: ['', [Validators.required]],
       pinCode: ['', [Validators.required]],
     })
+  }
+  submit(){
+    
   }
   public get name(): any {
     return this.loginForm.get('name')
